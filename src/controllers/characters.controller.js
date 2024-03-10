@@ -1,6 +1,4 @@
-import { fetchData } from '../adapters/fetchData.js';
-import { buildAuthEndpointParams } from '../helpers/buildEndpoint.js';
-import { formatCharacters } from '../helpers/formatCharacters.js';
+import getAllCharactersService from '../services/getAllCharacters.service.js';
 
 export class CharactersController {
   constructor() {
@@ -8,12 +6,9 @@ export class CharactersController {
   }
 
   getAllCharacters = async (_req, res) => {
-    const limit = 50;
-    const authEndpointParams = buildAuthEndpointParams();
-    const endpoint = `${this.baseUrl}?limit=${limit}&${authEndpointParams}`;
-    const characters = await fetchData(endpoint);
-    
-    const formattedResponse = formatCharacters(characters);
-    return res.json(formattedResponse);
+    const response = await getAllCharactersService(this.baseUrl);
+
+    if (response.length > 0) return res.status(200).json(response);
+    return res.status(412).send('No characters found');
   };
 }
