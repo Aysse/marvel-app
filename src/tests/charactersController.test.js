@@ -18,4 +18,11 @@ describe('Character services', () => {
 
     expect(response).toStrictEqual(responseAllCharacters);
   });
+  test('getCharactersByName should return formatted response', async () => {
+    fetchData.mockImplementation(() => Promise.resolve(charactersByName));
+
+    const response = await getCharactersByNameService('MOCK_BASE_URL', 'spider');
+
+    expect(response).toStrictEqual(responseCharactersByName);
+  });
 });
