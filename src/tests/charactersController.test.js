@@ -1,24 +1,21 @@
-import { CharactersController } from '../controllers/characters.controller.js';
+import getAllCharactersService from '../services/getAllCharacters.service.js';
+import getCharactersByNameService from '../services/getCharactersByName.service.js';
+import { fetchData } from '../adapters/fetchData.js';
 import allCharacters from './mocks/allCharacters.js';
 import responseAllCharacters from './mocks/responseAllCharacters.js';
-import { fetchData } from '../adapters/fetchData.js';
+import charactersByName from './mocks/charactersByName.js';
+import responseCharactersByName from './mocks/responseCharactersByName.js';
 
 jest.mock('../adapters/fetchData.js', () => ({
   fetchData: jest.fn(),
 }));
 
-describe('CharactersController', () => {
+describe('Character services', () => {
   test('getAllCharacters should return formatted response', async () => {
     fetchData.mockImplementation(() => Promise.resolve(allCharacters));
-    const charactersController = new CharactersController();
-   
-    const mockRes = {
-      json: jest.fn(),
-    };
 
-    await charactersController.getAllCharacters(null, mockRes);
-    const jsonResponse = mockRes.json.mock.calls[0][0];
+    const response = await getAllCharactersService('MOCK_BASE_URL');
 
-    expect(jsonResponse).toStrictEqual(responseAllCharacters);
+    expect(response).toStrictEqual(responseAllCharacters);
   });
 });
