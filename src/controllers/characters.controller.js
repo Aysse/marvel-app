@@ -8,12 +8,12 @@ export class CharactersController {
   }
 
   getAllCharacters = async (_req, res) => {
+    const limit = 50;
     const authEndpointParams = buildAuthEndpointParams();
-    const endpoint = `${this.baseUrl}?limit=50&${authEndpointParams}`;
+    const endpoint = `${this.baseUrl}?limit=${limit}&${authEndpointParams}`;
     const characters = await fetchData(endpoint);
     
     const formattedResponse = formatCharacters(characters);
-    console.log('formattedResponse:', formattedResponse)
-    res.json(formattedResponse);
+    return res.json(formattedResponse);
   };
 }

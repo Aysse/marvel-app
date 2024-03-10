@@ -1,5 +1,5 @@
 import express, { json } from 'express';
-import { CharactersController } from './controllers/characters.js';
+import { CharactersController } from './controllers/characters.controller.js';
 
 const app = express();
 app.use(json());
