@@ -1,0 +1,52 @@
+.header-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 48px;
+    gap: 20px;
+    position: absolute;
+    width: 1512px;
+    height: 84px;
+    left: 0px;
+    top: 0px;
+    background: #000000;
+}
+
+.marvel-logo {
+    margin: 0 auto;
+    width: 130px;
+    height: 52px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.fav-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+    margin: 0 auto;
+    width: 56px;
+    height: 37.68px;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+.fav-text {
+    width: 8px;
+    height: 19px;
+    font-family: 'Roboto Condensed';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    color: #FFF;
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
