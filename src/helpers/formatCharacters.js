@@ -1,13 +1,21 @@
-export function formatCharacters (data) {
-    if (!data || !data.data || !data.data.results) return [];
+export function formatCharacters ({ data, isMultiple = true, comics = [] }) {
+    if (!data || !data.data || !data.data.results) {
+        if(isMultiple) return [];
+        else return null;
+    }
 
-    return data.data.results.map(character => {
-        return {
+    const dataFormatted =  data.data.results.map(character => {
+        const characterData = {
             id: character.id,
             name: character.name,
             description: character.description,
-            image: `${character.thumbnail.path}/standard_xlarge.${character.thumbnail.extension}`,
-            // comics: character.comics.items,
+            image: {
+                path: character.thumbnail.path,
+                extension: character.thumbnail.extension
+            }
         };
+        if (!isMultiple) characterData.comics = comics;
+        return characterData;
     });
+    return isMultiple ? dataFormatted : dataFormatted[0];
 }

@@ -1,3 +1,4 @@
+import getCharacterByIdService from '../services/getCharacterById.service.js';
 import getCharactersService from '../services/getCharacters.service.js';
 
 export class CharactersController {
@@ -20,5 +21,14 @@ export class CharactersController {
 
     if (response.length > 0) return res.status(200).json(response);
     return res.status(412).send('No characters found by name');
+  };
+
+  getCharacterById = async (req, res) => {
+    const { id } = req.params;
+    const params = { limit: 20, orderBy: 'onsaleDate' };
+    const response = await getCharacterByIdService({ baseUrl: this.baseUrl, id, params });
+
+    if (response && Object.keys(response).length > 0) return res.status(200).json(response);
+    return res.status(412).send('No character found by id');
   };
 }
