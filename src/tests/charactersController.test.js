@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import { fetchData } from '../adapters/fetchData.js';
 import allCharacters from './mocks/allCharacters.js';
 import responseAllCharacters from './mocks/responseAllCharacters.js';
@@ -10,7 +11,7 @@ import characterById from './mocks/characterById.js';
 import comicById from './mocks/comicById.js';
 
 jest.mock('../adapters/fetchData.js', () => ({
-  fetchData: jest.fn(),
+  fetchData: jest.fn()
 }));
 
 describe('Character services', () => {
@@ -23,7 +24,7 @@ describe('Character services', () => {
   });
   test('getAllCharacters should return [] it fails fetchData', async () => {
     fetchData.mockImplementation(() => Promise.resolve('error'));
-    
+
     const response = await getCharactersService('MOCK_BASE_URL', { limit: 50 });
 
     expect(response).toStrictEqual([]);
@@ -31,14 +32,18 @@ describe('Character services', () => {
   test('getCharactersByName should return formatted response', async () => {
     fetchData.mockImplementation(() => Promise.resolve(charactersByName));
 
-    const response = await getCharactersService('MOCK_BASE_URL', { name: 'spider' });
+    const response = await getCharactersService('MOCK_BASE_URL', {
+      name: 'spider'
+    });
 
     expect(response).toStrictEqual(responseCharactersByName);
   });
   test('getCharactersByName should return [] it fails fetchData', async () => {
     fetchData.mockImplementation(() => Promise.resolve('error'));
-    
-    const response = await getCharactersService('MOCK_BASE_URL', { name: 'spider' });
+
+    const response = await getCharactersService('MOCK_BASE_URL', {
+      name: 'spider'
+    });
 
     expect(response).toStrictEqual([]);
   });
@@ -46,10 +51,10 @@ describe('Character services', () => {
     fetchData.mockResolvedValueOnce(characterById);
     fetchData.mockResolvedValueOnce(comicById);
 
-    const response = await getCharacterByIdService({ 
-      baseUrl: 'MOCK_BASE_URL', 
-      id: 1010354, 
-      params: { limit: 20, orderBy: 'onsaleDate' } 
+    const response = await getCharacterByIdService({
+      baseUrl: 'MOCK_BASE_URL',
+      id: 1010354,
+      params: { limit: 20, orderBy: 'onsaleDate' }
     });
 
     expect(response).toStrictEqual(responseCharacterById);
@@ -57,11 +62,11 @@ describe('Character services', () => {
   test('getCharacterById should return [] it fails fetchData', async () => {
     fetchData.mockResolvedValueOnce('error');
     fetchData.mockResolvedValueOnce('error');
-    
-    const response = await getCharacterByIdService({ 
-      baseUrl: 'MOCK_BASE_URL', 
-      id: 1010354, 
-      params: { limit: 20, orderBy: 'onsaleDate' } 
+
+    const response = await getCharacterByIdService({
+      baseUrl: 'MOCK_BASE_URL',
+      id: 1010354,
+      params: { limit: 20, orderBy: 'onsaleDate' }
     });
 
     expect(response).toStrictEqual(null);
