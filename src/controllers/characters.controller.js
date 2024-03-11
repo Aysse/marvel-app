@@ -1,5 +1,4 @@
-import getAllCharactersService from '../services/getAllCharacters.service.js';
-import getCharactersByNameService from '../services/getCharactersByName.service.js';
+import getCharactersService from '../services/getCharacters.service.js';
 
 export class CharactersController {
   constructor() {
@@ -7,7 +6,8 @@ export class CharactersController {
   }
 
   getAllCharacters = async (_req, res) => {
-    const response = await getAllCharactersService(this.baseUrl);
+    const params = { limit: 50 };
+    const response = await getCharactersService(this.baseUrl, params);
 
     if (response.length > 0) return res.status(200).json(response);
     return res.status(412).send('No characters found');
@@ -15,7 +15,8 @@ export class CharactersController {
 
   getCharactersByName = async (req, res) => {
     const { name } = req.params;
-    const response = await getCharactersByNameService(this.baseUrl, name);
+    const params = { nameStartsWith: name };
+    const response = await getCharactersService(this.baseUrl, params);
 
     if (response.length > 0) return res.status(200).json(response);
     return res.status(412).send('No characters found by name');
