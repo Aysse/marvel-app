@@ -8,6 +8,7 @@ app.disable('x-powered-by');
 const charactersController = new CharactersController();
 app.get('/characters', charactersController.getAllCharacters);
 app.get('/characters/:name', charactersController.getCharactersByName);
+app.get('/characters/id/:id', charactersController.getCharacterById);
 
 const port = process.env.PORT || 3000;
 

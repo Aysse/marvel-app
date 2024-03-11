@@ -10,5 +10,5 @@ export default async function getCharactersService(baseUrl, params) {
     const endpoint = `${baseUrl}?${paramsStr}&${authEndpointParams}`;
     const characters = await fetchData(endpoint);
     
-   return formatCharacters(characters);
+   return formatCharacters({ data: characters });
 }
