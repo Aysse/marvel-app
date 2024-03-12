@@ -11,9 +11,8 @@ function Body() {
             {state.data ? (
                 <div className='characters-found'>
                     {state.data.map(element => {
-                        const image = `${element.image.path}/standard_large.${element.image.extension}`;
                         const fav = state.favs.some(fav => fav.id === element.id);
-                        return <Card key={element.id} id={element.id} name={element.name} image={image} fav={fav} />
+                        return <Card key={element.id} id={element.id} name={element.name} image={element.image} fav={fav} />
                     })}
                 </div>
             ) : (

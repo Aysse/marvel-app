@@ -5,6 +5,7 @@ import React, { createContext, useContext, useReducer } from 'react';
 const ApiContext = createContext();
 
 const initialState = {
+  initialData: [],
   data: null,
   searchResults: [],
   favs: [],
@@ -12,6 +13,8 @@ const initialState = {
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'SET_INITIAL_DATA':
+      return { ...state, data: action.payload, initialData: action.payload };
     case 'SET_DATA':
       return { ...state, data: action.payload };
     case 'SET_SEARCH_RESULTS':

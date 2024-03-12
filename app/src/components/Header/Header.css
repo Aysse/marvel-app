@@ -19,6 +19,7 @@
     flex: none;
     order: 0;
     flex-grow: 0;
+    cursor: pointer;
 }
 
 .fav-div {
@@ -33,6 +34,7 @@
     flex: none;
     order: 1;
     flex-grow: 0;
+    cursor: pointer;
 }
 
 .fav-text {
