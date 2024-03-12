@@ -7,36 +7,42 @@
     width: 188.57px;
     min-width: 172.5px;
     min-height: 245.97px;
-    background: #000;
     color: #fff;
     order: 1;
     flex-grow: 1;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
 }
-
 .card-info {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     padding: 8px 16px;
+    background: #000;
+    transition: background 0.3s ease;
 }
-
+.card-container:hover .card-info{
+    background: #ec1d24;
+}
 .card-img {
     width: inherit;
 }
-
 .card-name {
     grid-column: 1 / 8;
     font-size: 14px;
     font-weight: 400;
     text-transform: uppercase;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
-
 .card-fav-button {
     background: none;
     border: none;
 }
-
 .card-fav-icon {
     width: 14px;
     height: 14px;
+    /* transition: all 0.3s ease; */
 }
+/* .card-container:hover .card-fav-icon {
+    fill: #fff;
+} */

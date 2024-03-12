@@ -3,15 +3,16 @@ import React from 'react'
 import './Header.css'
 import marvelLogo from '../../assets/marvel-logo.svg'
 import heartIcon from '../../assets/heart-icon.svg'
+import { useStateValue } from '../../context/apiContext';
 
 function Header() {
-
+    const { state, dispatch } = useStateValue();
     return (
         <div className='header-container'>
             <img src={marvelLogo} className='marvel-logo' alt='Marvel logo' />
             <div className='fav-div'>
                 <img src={heartIcon} alt="Heart fav icon" />
-                <div className='fav-text'>3</div>
+                <div className='fav-text'>{state.favs.length}</div>
             </div>
         </div>
     )
