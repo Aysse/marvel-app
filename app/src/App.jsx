@@ -12,7 +12,7 @@ function App() {
   const { state, dispatch } = useStateValue();
   const { GET_ALL_CHARACTERS_ENDPOINT } = constants;
 
-  useApiGetInitialData(GET_ALL_CHARACTERS_ENDPOINT, dispatch);
+  useApiGetInitialData(GET_ALL_CHARACTERS_ENDPOINT, state, dispatch);
   return (
     <>
       <Header />

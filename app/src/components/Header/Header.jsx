@@ -8,10 +8,10 @@ import { useStateValue } from '../../context/apiContext';
 function Header() {
     const { state, dispatch } = useStateValue();
     const handleHomeView = () => {
-        dispatch({ type: 'SET_DATA', payload: state.initialData });
+        dispatch({ type: 'SET_DATA', payload: { data: state.initialData, isInFavs: false } });
     }
     const handleFavView = () => {
-        dispatch({ type: 'SET_DATA', payload: state.favs });
+        dispatch({ type: 'SET_DATA', payload: { data: state.favs, isInFavs: true } });
     }
     return (
         <div className='header-container'>
