@@ -10,9 +10,10 @@ import constants from './constants'
 
 function App() {
   const { state, dispatch } = useStateValue();
-  const { GET_ALL_CHARACTERS_ENDPOINT } = constants;
+  const { GET_CHARACTERS_ENDPOINT } = constants;
 
-  useApiGetInitialData(GET_ALL_CHARACTERS_ENDPOINT, state, dispatch);
+  useApiGetInitialData(GET_CHARACTERS_ENDPOINT, state, dispatch);
+  
   return (
     <>
       <Header />

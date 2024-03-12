@@ -5,21 +5,21 @@ import React, { createContext, useContext, useReducer } from 'react';
 const ApiContext = createContext();
 
 const initialState = {
+  isLoading: true,
   initialData: [],
-  data: null,
-  searchResults: [],
+  data: [],
   favs: [],
   isInFavs: false,
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'SET_LOADING':
+      return { ...state, isLoading: action.payload };
     case 'SET_INITIAL_DATA':
-      return { ...state, data: action.payload, initialData: action.payload, isInFavs: false };
+      return { ...state, isLoading: false, data: action.payload, initialData: action.payload, isInFavs: false };
     case 'SET_DATA':
-      return { ...state, data: action.payload.data, isInFavs: action.payload.isInFavs };
-    case 'SET_SEARCH_RESULTS':
-      return { ...state, searchResults: action.payload };
+      return { ...state, isLoading: false, data: action.payload.data, isInFavs: action.payload.isInFavs };
     case 'ADD_FAVORITE':
       return { ...state, favs: [...state.favs, action.payload] };
     case 'REMOVE_FAVORITE':

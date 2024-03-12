@@ -8,7 +8,7 @@ function Body() {
     const { state, dispatch } = useStateValue();
     return (
         <div>
-            {state.data ? (
+            {!state.isLoading ? (
                 <div className='characters-found'>
                     {state.data.map(element => {
                         const fav = state.favs.some(fav => fav.id === element.id);
