@@ -26,6 +26,7 @@ function Card({
   return (
     <div className='card-container' onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
       <img className='card-img' src={image} alt={`${name} image`} />
+      <span className='divider' />
       <div className='card-info'>
         <p className='card-name'>{name}</p>
         <button className='card-fav-button' onClick={handleFav}>
