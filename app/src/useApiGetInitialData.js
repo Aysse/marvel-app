@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
-const useApiGetInitialData = (url, dispatch) => {
+const useApiGetInitialData = (url, state, dispatch) => {
   useEffect(() => {
     const fetchData = async () => {
+      if (state?.initialData.length > 0) return;
       try {
         const response = await fetch(url);
         const data = await response.json();
