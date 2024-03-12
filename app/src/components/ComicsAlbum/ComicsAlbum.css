@@ -1,0 +1,23 @@
+.horizontal-scroll-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  scrollbar-color: var(--marvel-red) transparent;
+}
+.scroll-content {
+  display: flex;
+}
+.scroll-item {
+  width: 180px;
+  margin-right: 20px;
+}
+.scroll-item img {
+  width: inherit;
+  height: auto;
+}
+.comics-title {
+  text-align: center;
+  margin-top: 8px;
+}
+.comic-year {
+  font-size: 12px;
+}
