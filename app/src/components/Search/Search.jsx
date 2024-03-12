@@ -5,10 +5,12 @@ import { useStateValue } from '../../context/apiContext';
 
 function Search() {
   const { state, dispatch } = useStateValue();
+  const results = state.data ? state.data.length : 0;
+  const resultsString = results === 1 ? 'result' : 'results';
   return (
     <div className='search-container'>
         <input type='text' className='search-input' placeholder='SEARCH A CHARACTER...' />
-        <p className='search-results'>{state.data ? state.data.length : 0} results</p>
+        <p className='search-results'>{results} {resultsString}</p>
     </div>
   )
 }
