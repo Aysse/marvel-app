@@ -1,34 +1,64 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
-import constants from '../../constants'
-import { useStateValue } from '../../context/apiContext'
-import useApi from '../../hooks/useApi'
-import './DetailedView.css'
-import heartEmpty from '../../assets/heart-empty.svg'
+import React, { useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import { useStateValue } from '../../context/apiContext';
+import constants from '../../constants';
+import useApi from '../../hooks/useApi';
+import heartEmpty from '../../assets/heart-empty.svg';
+import heartIcon from '../../assets/heart-icon.svg';
+import ComicsAlbum from '../ComicsAlbum/ComicsAlbum';
+import Loader from '../Loader/Loader';
+import Header from '../Header/Header';
+import './DetailedView.css';
 
-import PropTypes from 'prop-types';
-import ComicsAlbum from '../ComicsAlbum/ComicsAlbum'
-
-function DetailedView({ id = 1010354 }) {
+function DetailedView() {
     const { state, dispatch } = useStateValue();
+    const { id: idStr } = useParams();
+    const id = parseInt(idStr);
+    
+    const imageSize = 'standard_fantastic';
+
     const { GET_CHARACTER_BY_ID_ENDPOINT } = constants;
     const type = 'SET_DETAIL_DATA';
-    const url = `${GET_CHARACTER_BY_ID_ENDPOINT}/${id}`;
+    const endpoint = `${GET_CHARACTER_BY_ID_ENDPOINT}/${id}`;
 
-    useApi({ url, state, dispatch, type });
-    const imageSize = 'standard_fantastic';
-    const image = `${state.detailData.image.path}/${imageSize}.${state.detailData.image.extension}`;
+    useApi({ url: endpoint, state, dispatch, type });
+
+    const handleFav = () => {
+        if (state.detailData) {
+            const fav = state.favs.some((fav) => fav.id === id);
+            if (fav) {
+                dispatch({ type: 'REMOVE_FAVORITE', payload: { id } });
+            } else {
+                console.log('state.detailData', state.detailData);
+                dispatch({
+                    type: 'ADD_FAVORITE',
+                    payload: { id, name: state.detailData.name, image: state.detailData.image },
+                });
+            }
+        }
+    };
+
     return (
         <>
-            {state.isLoading ? <p>Loading...</p> : (
+            {state.isLoading || !state.detailData ? (
+                <Loader />
+            ) : (
                 <>
+                    <Header />
                     <section className='character-container'>
                         <div className='character-div'>
-                            <img className='character-img' src={image} alt={state.detailData.name} />
+                            <img
+                                className='character-img'
+                                src={`${state.detailData.image.path}/${imageSize}.${state.detailData.image.extension}`}
+                                alt={state.detailData.name}
+                            />
                             <div className='character-info'>
                                 <div className='character-title'>
                                     <h1>{state.detailData.name}</h1>
-                                    <img className='fav-icon' src={heartEmpty} alt='favorite' />
+                                    <button onClick={handleFav}>
+                                        <img className='fav-icon' alt='favorite' src={state.favs.some((fav) => fav.id === id) ? heartIcon : heartEmpty} />
+                                    </button>
                                 </div>
                                 <p className='character-description'>{state.detailData.description}</p>
                             </div>
@@ -37,17 +67,17 @@ function DetailedView({ id = 1010354 }) {
                     <section className='comics-container'>
                         <div className='comics-div'>
                             <h2>Comics</h2>
-                            <ComicsAlbum  items={state.detailData.comics || []} />
+                            {state.detailData.comics.length > 0 ? (
+                                <ComicsAlbum fav={true} items={state.detailData.comics || []} />
+                            ) : (
+                                <p>No comics available</p>
+                            )}
                         </div>
                     </section>
                 </>
             )}
         </>
-    )
+    );
 }
 
-DetailedView.propTypes = {
-    id: PropTypes.number.isRequired,
-};
-
-export default DetailedView
+export default DetailedView;

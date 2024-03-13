@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 
-const useApi = ({ url, state, dispatch, type }) => {
+const useApi = ({ url, dispatch, type }) => {
   useEffect(() => {
     const fetchData = async () => {
-      if (state?.initialData.length > 0) return;
+      // if (state?.initialData.length > 0) return;
+
       try {
         const response = await fetch(url);
         const data = await response.json();

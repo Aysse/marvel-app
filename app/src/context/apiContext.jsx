@@ -5,12 +5,13 @@ import React, { createContext, useContext, useReducer } from 'react';
 const ApiContext = createContext();
 
 const initialState = {
-  isLoading: false,
+  isLoading: true,
   initialData: [],
+  favsViewData: [],
   data: [],
   favs: [],
   isInFavs: false,
-  detailData: { image: 'http://i.annihil.us/u/prod/marvel/i/mg/a/f0/5202887448860/standard_fantastic.jpg', name: 'Adam Warlock', description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas auctor egestas elit, quis molestie nunc rhoncus in. Phasellus enim tellus, imperdiet viverra dolor pharetra, bibendum dictum libero. In at felis et turpis pellentesque pellentesque ac fringilla lacus. Ut placerat est eget tempor sollicitudin. Pellentesque sit amet nisl vitae odio tempus. ' },
+  detailData: null,
 };
 
 const reducer = (state, action) => {
@@ -21,6 +22,8 @@ const reducer = (state, action) => {
       return { ...state, isLoading: false, data: action.payload, initialData: action.payload, isInFavs: false };
     case 'SET_DATA':
       return { ...state, isLoading: false, data: action.payload.data, isInFavs: action.payload.isInFavs };
+    case 'SET_FAVS_DATA':
+      return { ...state, isLoading: false, favsViewData: action.payload.data };
     case 'ADD_FAVORITE':
       return { ...state, favs: [...state.favs, action.payload] };
     case 'REMOVE_FAVORITE':

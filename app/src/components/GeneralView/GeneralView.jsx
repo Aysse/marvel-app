@@ -4,20 +4,23 @@ import Search from '../Search/Search'
 import Body from '../Body/Body'
 import constants from '../../constants'
 import { useStateValue } from '../../context/apiContext'
-import useApiGetInitialData from '../../useApiGetInitialData'
+import useApi from '../../hooks/useApi'
+import Header from '../Header/Header'
 
-function App() {
+function GeneralView() {
   const { state, dispatch } = useStateValue();
-  const { GET_CHARACTERS_ENDPOINT } = constants;
+  const { GET_CHARACTERS_ENDPOINT: url } = constants;
+  const type = 'SET_INITIAL_DATA';
 
-  useApiGetInitialData(GET_CHARACTERS_ENDPOINT, state, dispatch);
+  useApi({ url, state, dispatch, type });
   
   return (
     <>
+      <Header />
       <Search />
       <Body />
     </>
   )
 }
 
-export default App
+export default GeneralView

@@ -1,7 +1,7 @@
 .horizontal-scroll-container {
   overflow-x: auto;
   white-space: nowrap;
-  scrollbar-color: var(--marvel-red) transparent;
+  scrollbar-color: var(--marvel-red) #00000005;
 }
 .scroll-content {
   display: flex;
@@ -14,9 +14,17 @@
   width: inherit;
   height: auto;
 }
-.comics-title {
-  text-align: center;
+.comic-title {
+  font-weight: 500;
+  font-size: 16px;
+  text-align: start;
   margin-top: 8px;
+  max-width: 100%;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  white-space: normal;
 }
 .comic-year {
   font-size: 12px;

@@ -2,6 +2,7 @@
 import React from 'react'
 import './ComicsAlbum.css'
 import PropTypes from 'prop-types';
+import { useStateValue } from '../../context/apiContext';
 
 function ComicsAlbum({ items }) {
     return (
