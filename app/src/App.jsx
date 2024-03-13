@@ -1,25 +1,19 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import './App.css'
-import Header from './components/Header/Header'
-import Search from './components/Search/Search'
-import { useStateValue } from './context/apiContext'
-import useApiGetInitialData from './useApiGetInitialData'
-import Body from './components/Body/Body'
-import constants from './constants'
+import GeneralView from './components/GeneralView/GeneralView'
+import DetailedView from './components/DetailedView/DetailedView'
+import FavView from './components/FavView/FavView'
 
 function App() {
-  const { state, dispatch } = useStateValue();
-  const { GET_CHARACTERS_ENDPOINT } = constants;
-
-  useApiGetInitialData(GET_CHARACTERS_ENDPOINT, state, dispatch);
-  
+  const router = createBrowserRouter([
+    { path: '/', element: <GeneralView /> },
+    { path: '/favs', element: <FavView /> },
+    { path: '/:id', element: <DetailedView /> },
+  ])
   return (
-    <>
-      <Header />
-      <Search />
-      <Body />
-    </>
+    <RouterProvider router={router} />
   )
 }
 

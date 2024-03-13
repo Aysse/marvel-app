@@ -1,0 +1,68 @@
+
+h1 {
+    font-size: 40px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+h2 {
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.character-container {
+    background: #000;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+    padding: 0 48px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.character-div {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    width: 75%;
+}
+.character-img {
+    min-width: 320px;
+
+}
+.character-title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 24px;
+}
+.character-title button {
+    background: none;
+    border: none;
+}
+.fav-icon {
+    cursor: pointer;
+    width: 24px;
+}
+.character-description {
+    font-size: 16px;
+    font-weight: 400;
+    text-wrap: pretty;
+}
+.comics-container {
+    padding: 0 48px;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.comics-div {
+    width: 50%;
+    left: 0px;
+    top: 0px;
+    display: column;
+}

@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import heartEmpty from '../../assets/heart-empty.svg';
 import heartIcon from '../../assets/heart-icon.svg';
@@ -26,15 +27,20 @@ function Card({
 
   return (
     <div className='card-container' onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-      <img className='card-img' src={`${image.path}/${imageSize}.${image.extension}`} alt={`${name} image`} />
+      <Link className='card-img' to={`/${id}`} >
+        <img className='card-img' src={`${image.path}/${imageSize}.${image.extension}`} alt={`${name} image`} />
+      </Link>
       <span className='divider' />
       <div className='card-info'>
-        <p className='card-name'>{name}</p>
+        <Link className='card-name' to={`/${id}`} >
+          <p>{name}</p>
+        </Link>
         <button className='card-fav-button' onClick={handleFav}>
           <img className='card-fav-icon' alt='Favorite' src={fav ? (isHover ? heartIconHover : heartIcon) : heartEmpty} />
         </button>
       </div>
     </div>
+
   )
 }
 

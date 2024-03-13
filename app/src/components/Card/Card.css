@@ -11,6 +11,7 @@
     order: 1;
     flex-grow: 1;
     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+    cursor: pointer;
 }
 .divider{
     background: var(--marvel-red);
@@ -29,6 +30,13 @@
 }
 .card-img {
     width: inherit;
+    height: 100%;
+}
+.card-img:visited {
+    color: unset;
+}
+.card-img:link {
+    color: unset;
 }
 .card-name {
     grid-column: 1 / 8;
@@ -38,6 +46,13 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-decoration: none;
+}
+.card-name:visited {
+    color: unset;
+}
+.card-name:link {
+    color: unset;
 }
 .card-fav-button {
     background: none;
@@ -46,8 +61,4 @@
 .card-fav-icon {
     width: 14px;
     height: 14px;
-    /* transition: all 0.3s ease; */
 }
-/* .card-container:hover .card-fav-icon {
-    fill: #fff;
-} */

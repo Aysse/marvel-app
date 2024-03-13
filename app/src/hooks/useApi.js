@@ -1,13 +1,14 @@
 import { useEffect } from 'react';
 
-const useApiGetInitialData = (url, state, dispatch) => {
+const useApi = ({ url, dispatch, type }) => {
   useEffect(() => {
     const fetchData = async () => {
-      if (state?.initialData.length > 0) return;
+      // if (state?.initialData.length > 0) return;
+
       try {
         const response = await fetch(url);
         const data = await response.json();
-        dispatch({ type: 'SET_INITIAL_DATA', payload: data });
+        dispatch({ type, payload: data });
       } catch (error) {
         console.error(`Error fetching data from ${url}:`, error);
       }
@@ -17,4 +18,4 @@ const useApiGetInitialData = (url, state, dispatch) => {
   }, [url, dispatch]);
 };
 
-export default useApiGetInitialData;
+export default useApi;
