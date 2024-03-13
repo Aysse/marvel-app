@@ -45,9 +45,9 @@ function Card({
 }
 
 Card.propTypes = {
-  id: PropTypes.number.isRequired,
-  name: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired,
+  id: PropTypes.number,
+  name: PropTypes.string,
+  image: PropTypes.object,
   fav: PropTypes.bool
 };
 
