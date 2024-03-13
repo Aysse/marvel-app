@@ -14,6 +14,10 @@ app.get('/characters/id/:id', charactersController.getCharacterById);
 
 const port = process.env.PORT || 3000;
 
+if (process.env.NODE_ENV === 'development') {
+  console.log('Running in development mode');
+}
+
 app.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

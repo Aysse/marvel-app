@@ -5,7 +5,8 @@
   "main": "index.ts",
   "type": "module",
   "scripts": {
-    "dev": "node --watch --env-file=.env ./src/index.js",
+    "dev": "node --watch --env-file=.env.development ./src/index.js",
+    "start": "node ./src/index.js",
     "test": "jest",
     "lint": "eslint . --fix",
     "format": "prettier --write ."
