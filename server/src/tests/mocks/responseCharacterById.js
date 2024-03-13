@@ -11,6 +11,7 @@ export default {
     {
       id: 10195,
       title: 'Marvel Premiere (1972) #1',
+      year: 1972,
       description:
         'Introducing the power of Warlock! Who is this near-celestial being endowed with abilities beyond any human? His origin revealed, in his first ever appearance!',
       image: {
@@ -21,6 +22,7 @@ export default {
     {
       id: 10206,
       title: 'Marvel Premiere (1972) #2',
+      year: 1972,
       description:
         'Warlock vs. Rhodan and the Hounds of Helios! A divine battle fit for the gods!',
       image: {
@@ -31,6 +33,7 @@ export default {
     {
       id: 11958,
       title: 'Warlock (1972) #1',
+      year: 1972,
       description: null,
       image: {
         path: 'http://i.annihil.us/u/prod/marvel/i/mg/f/60/5c9bd66a7d2ac',
@@ -40,6 +43,7 @@ export default {
     {
       id: 11965,
       title: 'Warlock (1972) #2',
+      year: 1972,
       description: null,
       image: {
         path: 'http://i.annihil.us/u/prod/marvel/i/mg/c/80/5c9bde7be0463',
@@ -49,6 +53,7 @@ export default {
     {
       id: 11966,
       title: 'Warlock (1972) #3',
+      year: 1972,
       description: null,
       image: {
         path: 'http://i.annihil.us/u/prod/marvel/i/mg/d/40/5c9cc8fe825c7',
@@ -58,6 +63,7 @@ export default {
     {
       id: 11967,
       title: 'Warlock (1972) #4',
+      year: 1973,
       description: null,
       image: {
         path: 'http://i.annihil.us/u/prod/marvel/i/mg/c/70/5c9cd2fc6a651',
@@ -67,6 +73,7 @@ export default {
     {
       id: 11968,
       title: 'Warlock (1972) #5',
+      year: 1973,
       description: null,
       image: {
         path: 'http://i.annihil.us/u/prod/marvel/i/mg/0/04/5c9cd8f7d4cb5',
@@ -76,6 +83,7 @@ export default {
     {
       id: 11969,
       title: 'Warlock (1972) #6',
+      year: 1973,
       description:
         "Warlock walks straight into a trap set by Astrella. There, Warlock encounters the Brute, a former human trapped in a monster's body. When Warlock discovers a way to revert the Brute to human form, his true identity is revealed. Introducing Reed Richards of Counter-Earth!",
       image: {
@@ -86,6 +94,7 @@ export default {
     {
       id: 11970,
       title: 'Warlock (1972) #7',
+      year: 1973,
       description:
         "Warlock's teenage companions reveal that they are targets of discrimination. After the teens are placed in protective custody, Warlock decides to free his friends despite protests from Von Doom. Plus, Reed Richards takes on Doctor Doom of Counter-Earth, but this time, the roles are reversed!",
       image: {
@@ -96,6 +105,7 @@ export default {
     {
       id: 11971,
       title: 'Warlock (1972) #8',
+      year: 1973,
       description:
         "President Rex Carpenter continues to terrorize Warlock, despite his public approval of the hero. Followers of Warlock meet a tragic end following a demon attack. The concluding issue to Warlock's series, closed with a cliffhanger you have to read to believe!",
       image: {
@@ -106,6 +116,7 @@ export default {
     {
       id: 17200,
       title: 'Incredible Hulk (1962) #176',
+      year: 1974,
       description:
         'Following his destruction of the Inhumans\' home, Hulk is launched into the vastness of space. Not realizing he is onboard a space shuttle, Hulk smashes "free", and nearly pilots himself, and the crew, into the sun!',
       image: {
@@ -116,6 +127,7 @@ export default {
     {
       id: 8988,
       title: 'Incredible Hulk (1962) #177',
+      year: 1974,
       description:
         'Hulk believes he is in Washington D.C., but actually finds himself on Counter-Earth! Will Hulk be able to survive on a parallel planet so different from his own?',
       image: {
@@ -126,6 +138,7 @@ export default {
     {
       id: 17166,
       title: 'Incredible Hulk (1962) #178',
+      year: 1974,
       description:
         'Hulk is reverted back to Bruce Banner by an act of brute force. Banner can only watch in horror as the Counter-Earth battle rages on in D.C. Who is the madman posturing as President of Counter-Earth? And will Hulk be able to save his friend Adam Warlock from certain execution?',
       image: {
@@ -136,6 +149,7 @@ export default {
     {
       id: 22130,
       title: 'Strange Tales (1951) #178',
+      year: 1975,
       description:
         "Who is Adam Warlock? Let's find out more about the Man who Stalked the Stars in his definitive origin! Plus, the history of the High Evolutionary's Counter-Earth!",
       image: {
@@ -146,6 +160,7 @@ export default {
     {
       id: 22131,
       title: 'Strange Tales (1951) #179',
+      year: 1975,
       description:
         "Warlock is captured by a species unfamiliar, in a ship unknown. He'll stick around for a little just to learn more about this strange race, but his break out is imminent!",
       image: {
@@ -156,6 +171,7 @@ export default {
     {
       id: 22132,
       title: 'Strange Tales (1951) #180',
+      year: 1975,
       description:
         "The first appearance of Gamora!  Warlock takes on an alien court! Where's an intergalactic lawyer when you need one?!",
       image: {
@@ -166,6 +182,7 @@ export default {
     {
       id: 11972,
       title: 'Warlock (1972) #9',
+      year: 1975,
       description:
         "Warlock comes face to face with his evil alter ego, the Magus! Is Warlock's fate truly set in stone, or can he avoid his cruel destiny?",
       image: {
@@ -176,6 +193,7 @@ export default {
     {
       id: 11959,
       title: 'Warlock (1972) #10',
+      year: 1975,
       description:
         'Warlock, Pip, and Gamora face an onslaught of 25,000 Black Knights! Can the cosmic comrades combat these catastrophic odds?',
       image: {
@@ -186,6 +204,7 @@ export default {
     {
       id: 11960,
       title: 'Warlock (1972) #11',
+      year: 1976,
       description:
         'Warlock explores his possible futures with the aid of the Soul Gem. Witness his stunning discoveries!',
       image: {
@@ -196,6 +215,7 @@ export default {
     {
       id: 11961,
       title: 'Warlock (1972) #12',
+      year: 1976,
       description:
         "Pip takes center-stage in this 'Trollish Tale'! Marvel's most dastardly troll runs into trouble at a cabaret, when performer Heater Delight catches his eye. But before love can bloom, Pip must take on Pro-Boscis, Heater's unrelenting, (and entirely cruel), owner!",
       image: {
