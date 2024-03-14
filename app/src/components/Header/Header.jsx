@@ -11,7 +11,7 @@ function Header() {
 
     return (
         <div className='header-container'>
-            <Link to={'/'} state={'hola caracolas'}><img src={marvelLogo} className='marvel-logo' alt='Marvel logo' /></Link>
+            <Link to={'/'}><img src={marvelLogo} className='marvel-logo' alt='Marvel logo' /></Link>
             <Link to={'/favs'} className='fav-div'>
                 <img src={heartIcon} alt="Heart fav icon" />
                 <div className='fav-text'>{state.favs.length}</div>
