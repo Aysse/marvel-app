@@ -11,7 +11,7 @@ import { useStateValue } from '../../context/apiContext';
 function Card({
   id,
   name = 'Name',
-  image = { path: 'http://i.annihil.us/u/prod/marvel/i/mg/a/f0/5202887448860/', format: 'jpg' },
+  image = '',
   fav = false
 }) {
   const { state, dispatch } = useStateValue();
