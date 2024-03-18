@@ -14,6 +14,9 @@ Este proyecto consta de dos partes: un backend desarrollado con Node.js y Expres
 - React.js: 18.2.0
 - Node.js: 20.8.1 
 
+### Primeros pasos
+Conseguir `PUBLIC_KEY` y `PRIVATE_KEY` de la [API de Marvel](https://developer.marvel.com/documentation/generalinfo) y añadirlas al archivo `.env` correspondiente de la carpeta `/server`.
+
 ### Backend
 
 1. Abre una terminal y navega hasta la carpeta del backend.
