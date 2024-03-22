@@ -8,11 +8,13 @@ import { useStateValue } from '../../context/apiContext';
 
 function Header() {
     const { state, dispatch } = useStateValue();
-
+    const handleBackClick = () => {
+        dispatch({ type: 'SET_DETAIL_DATA', payload: null });
+    }
     return (
         <div className='header-container'>
-            <Link to={'/'}><img src={marvelLogo} className='marvel-logo' alt='Marvel logo' /></Link>
-            <Link to={'/favs'} className='fav-div'>
+            <Link to={'/'} onClick={handleBackClick}><img src={marvelLogo} className='marvel-logo' alt='Marvel logo' /></Link>
+            <Link to={'/favs'} className='fav-div' onClick={handleBackClick}>
                 <img src={heartIcon} alt="Heart fav icon" />
                 <div className='fav-text'>{state.favs.length}</div>
             </Link>
