@@ -29,7 +29,7 @@ h2 {
 }
 .character-img {
     min-width: 320px;
-
+    aspect-ratio: 1/1;
 }
 .character-title {
     display: flex;

@@ -26,6 +26,9 @@
   -webkit-line-clamp: 2;
   white-space: normal;
 }
+.comic-img {
+  aspect-ratio: 2/3;
+}
 .comic-year {
   font-size: 12px;
 }

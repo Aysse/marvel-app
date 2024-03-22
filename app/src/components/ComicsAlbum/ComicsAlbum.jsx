@@ -14,7 +14,7 @@ function ComicsAlbum({ items }) {
                     const image = `${item.image.path}/${imageSize}.${item.image.extension}`;
                     return (
                         <div key={index} className="scroll-item">
-                            <img src={image} alt={item.title} />
+                            <img className='comic-img' src={image} alt={item.title} />
                             <p className='comic-title'>{item.title}</p>
                             <p className='comic-year'>{item.year}</p>
                         </div>
